@@ -6,7 +6,9 @@ async function routes(fastify: FastifyInstance): Promise<void> {
             status: "OK",
             message: "DevBills API rodando normalmente"
         }
-    })
+    });
+
+    
 }
 
 export default routes
