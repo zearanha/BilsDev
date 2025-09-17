@@ -1,4 +1,5 @@
 import type { FastifyInstance } from "fastify";
+import { categoryRoutes } from "./categorie.routes";
 
 async function routes(fastify: FastifyInstance): Promise<void> {
     fastify.get('/health', async () =>{
@@ -8,6 +9,7 @@ async function routes(fastify: FastifyInstance): Promise<void> {
         }
     });
 
+    fastify.register(categoryRoutes, { prefix: '/categories'})
     
 }
 

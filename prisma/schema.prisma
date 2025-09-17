@@ -34,8 +34,8 @@ model Transaction {
   createdAt   DateTime        @default(now())
   updatedAt   DateTime        @updatedAt
 
+  Category   category? @relation(fields: [categoryId], references: [id])
   categoryId String? @db.ObjectId
-  category   category? @relation(fields: [categoryId], references: [id])
 
   @@index([userId, date])
   @@index([userId, date, categoryId])
